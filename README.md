@@ -10,19 +10,15 @@ For this project, I'm building a model to identify periods of coastal upwelling 
 
 ---
 
-### Data
-
-
-
----
-
 ### Notebooks
 
-[01_data_collection](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/01_data_collection.ipynb)
+[01_data_collection](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/01_data_collection.ipynb) - This notebook requests and pulls data from the OOI via their API. It's currently set up to download data from the surface mooring, shallow profiler, and 200 meter platform in 2017 and 2018 at the Oregon Offshore location. It will create a new directory called `coastal_upwelling_output` parallel to this repository where it will save these datasets as `.csv`s. 
 
-[02_data_analysis_2017](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/02_data_analysis_2017.ipynb)
+[02_data_analysis_2017](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/02_data_analysis_2017.ipynb) - This notebook contains exploratory data analysis for the 2017 data from the surface mooring, shallow profiler, and 200 meter platform. This includes creating plots to investigate data availability, sensor depths, and changes in environmental variables over time. This notebook requires the user to manually download the CUTI upwelling index data and place it into the `coastal_upwelling_output` directory - see detailed instructions in notebook.
 
-[]
+[03_data_analysis_2018](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/03_data_analysis_2018.ipynb) - This notebook is identical to the 02_data_anaysis_2017 notebook, but investigates the data from 2018. 
+
+[04_preprocessing](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/04_preprocessing.ipynb) - This notebook is for preprocessing data in preparation for modeling. This includes dropping filled values, appending the target variable to the features dataset, and saving clean datasets for modeling in a later notebook. Currently, this notebook contains a logistic regression model and needs to be updated.
 
 ---
 
