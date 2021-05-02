@@ -1,5 +1,20 @@
 
+============================================================================================================================================
+
 Sea surface mooring bulk meteorology package:
+
+----------------------------------------------------------------------
+
+All of 2018: 
+
+METBK_url = request_data('CE04OSSM-SBD11-06-METBKA000', 'recovered_host', 
+                         'metbk_a_dcl_instrument_recovered',
+                         '2018-01-01T00:00:00.000Z', '2018-12-31T12:00:00.000Z')
+print('METBK_url: %s' %METBK_url)
+
+METBK_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210502T005210982Z-CE04OSSM-SBD11-06-METBKA000-recovered_host-metbk_a_dcl_instrument_recovered/catalog.html
+
+----------------------------------------------------------------------
 
 All of 2017:
 
@@ -8,6 +23,8 @@ All of 2017:
 #                          '2017-01-01T00:00:00.000Z', '2017-12-31T12:00:00.000Z')
 METBK_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210422T030752259Z-CE04OSSM-SBD11-06-METBKA000-recovered_host-metbk_a_dcl_instrument_recovered/catalog.html
 
+----------------------------------------------------------------------
+
 March through June 2017:
 
 # METBK_url = request_data('CE04OSSM-SBD11-06-METBKA000', 'recovered_host', 
@@ -15,25 +32,49 @@ March through June 2017:
 #                          '2017-03-01T00:00:00.000Z', '2017-06-30T12:00:00.000Z')
 METBK_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210422T025024382Z-CE04OSSM-SBD11-06-METBKA000-recovered_host-metbk_a_dcl_instrument_recovered/catalog.html
 
-
+============================================================================================================================================
 
 Shallow profiler CTD-O package:
 
+----------------------------------------------------------------------
+
+All of 2018
+
+profiler_url = request_data('CE04OSPS-SF01B-2A-CTDPFA107', 'streamed', 'ctdpf_sbe43_sample',
+                        '2018-01-01T00:00:00.000Z', '2018-12-31T12:00:00.000Z')
+profiler_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210502T005211652Z-CE04OSPS-SF01B-2A-CTDPFA107-streamed-ctdpf_sbe43_sample/catalog.html
+
+----------------------------------------------------------------------
+
 All of 2017:
 
-# CTD_url = request_data('CE04OSPS-SF01B-2A-CTDPFA107', 'streamed', 'ctdpf_sbe43_sample',
+# profiler_url = request_data('CE04OSPS-SF01B-2A-CTDPFA107', 'streamed', 'ctdpf_sbe43_sample',
 #                         '2017-01-01T00:00:00.000Z', '2017-12-31T12:00:00.000Z')
-CTD_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210422T030848056Z-CE04OSPS-SF01B-2A-CTDPFA107-streamed-ctdpf_sbe43_sample/catalog.html
+profiler_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210422T030848056Z-CE04OSPS-SF01B-2A-CTDPFA107-streamed-ctdpf_sbe43_sample/catalog.html
+
+----------------------------------------------------------------------
 
 March through June 2017:
 
-# CTD_url = request_data('CE04OSPS-SF01B-2A-CTDPFA107', 'streamed', 'ctdpf_sbe43_sample',
+# profiler_url = request_data('CE04OSPS-SF01B-2A-CTDPFA107', 'streamed', 'ctdpf_sbe43_sample',
 #                         '2017-03-01T00:00:00.000Z', '2017-06-30T12:00:00.000Z')
-CTD_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210422T025026675Z-CE04OSPS-SF01B-2A-CTDPFA107-streamed-ctdpf_sbe43_sample/catalog.html
+profiler_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210422T025026675Z-CE04OSPS-SF01B-2A-CTDPFA107-streamed-ctdpf_sbe43_sample/catalog.html
 
-
+============================================================================================================================================
 
 200 meter platform CTD-O package:
+
+----------------------------------------------------------------------
+
+All of 2018: 
+
+platform_url = request_data('CE04OSPS-PC01B-4A-CTDPFA109', 'streamed', 
+                         'ctdpf_optode_sample',
+                         '2018-01-01T00:00:00.000Z', '2018-12-31T12:00:00.000Z')
+                         
+platform_url: https://opendap.oceanobservatories.org/thredds/catalog/ooi/deryag@uw.edu/20210502T005215562Z-CE04OSPS-PC01B-4A-CTDPFA109-streamed-ctdpf_optode_sample/catalog.html
+
+----------------------------------------------------------------------
 
 All of 2017:
 
@@ -41,3 +82,5 @@ All of 2017:
 #                          'ctdpf_optode_sample',
 #                          '2017-01-01T00:00:00.000Z', '2017-12-31T12:00:00.000Z')
 # print('platform_url: %s' %platform_url)
+
+============================================================================================================================================
