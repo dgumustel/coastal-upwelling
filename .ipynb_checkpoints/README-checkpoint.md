@@ -34,3 +34,7 @@ Capstone project for data science immersive. Building a model to identify period
 [Ethical machine learning resources](https://github.com/EthicalML/awesome-production-machine-learning)
 
 [GitHub project boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards#templates-for-project-boards)
+
+[Upwelling indices](https://oceanview.pfeg.noaa.gov/products/upwelling/intro)
+
+[Explore the CUTI index](https://heatherwelch.shinyapps.io/shiny_jacox_cuti/)
