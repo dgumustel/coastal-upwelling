@@ -1,19 +1,34 @@
-# coastal-upwelling
-Capstone project for data science immersive. Building a model to identify periods of upwelling off the Washington and Oregon coasts using OOI data.
+# Identifying Coastal Upwelling from Environmental Variables
+
+This is my capstone project for the Data Science Immersive program from General Assembly. 
 
 ---
 
-# Data
+### Problem Statement
+
+For this project, I'm building a model to identify periods of coastal upwelling off the coast of Oregon using data collected by the Ocean Observatories Initiatve (OOI). I intend to use environmental variables, such as seawater temperature, salinity, and dissolved oxygen, as features in a classification model, and I'll be labeling my target variable using the CUTI upwelling index. The OOI has several instrument packages off the Washington and Oregon coasts; for this project, I'll be focusing on the Oregon Offshore location, located offshore from Newport, Oregon. The instrument packages found here include a surface mooring that has a bulk meteorology package, a shallow profiler that collects data in the upper ~200 meters of the water column, a stationary platform located at a depth of 200 meters, and a deep profiler that collects data in the lower portion of the water column.
+
+---
+
+### Data
+
 
 
 ---
 
-# Notebooks
+### Notebooks
 
+[01_data_collection](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/01_data_collection.ipynb)
+
+[02_data_analysis_2017](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/02_data_analysis_2017.ipynb)
+
+[]
 
 ---
 
-# Resources:
+### Resources
+
+The following links are included for myself and others.
 
 [Learn how to do data requests with the OOI API](https://datalab.marine.rutgers.edu/2020/05/data-requests-the-easy-way-with-the-ooi-api/#top)
 
