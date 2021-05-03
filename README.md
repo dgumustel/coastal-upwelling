@@ -18,7 +18,9 @@ For this project, I'm building a model to identify periods of coastal upwelling 
 
 [03_data_analysis_2018](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/03_data_analysis_2018.ipynb) - This notebook is identical to the 02_data_anaysis_2017 notebook, but investigates the data from 2018. 
 
-[04_preprocessing](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/04_preprocessing.ipynb) - This notebook is for preprocessing data in preparation for modeling. This includes dropping filled values, appending the target variable to the features dataset, and saving clean datasets for modeling in a later notebook. Currently, this notebook contains a logistic regression model and needs to be updated.
+[04_preprocessing](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/04_preprocessing.ipynb) - This notebook reads in the 2017 METBK data, 2017 platform data, and CUTI upwelling index data and merges them into one dataframe along time. It then saves the resulting dataframe for modeling. 
+
+[misc_code](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/misc_code.ipynb) - This notebook contains miscellaneous snippets of code that I've written but don't currently need that I'd like to hold onto for potential use later. 
 
 ---
 
