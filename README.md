@@ -61,11 +61,30 @@ Outliers from the 2017 platform and METBK data were identified using z-scores, w
 
 ---
 
-### Modeling
+### Modeling and Results
 
 I chose to use logistic regression and decision tree classifiers from the [scikit-learn library](https://scikit-learn.org/stable/index.html). These models are simple to implement for binary classification and allow for interpretability, so we can investigate model coefficients and feature importance to identify the best environmental variables to use as features in upwelling classification. There's also potential for using unsupervised methods to look for clusters in the data as a stretch goal. 
 
-For the first iteration of modeling, I selected sea_surface_temperature, seawater_temperature, and practical_salinity from 01/01/17 - 09-14/17. The baseline model here, following the size of the majority class, is around 61.951%. There's strong multicollinearity in these features, so I made one logistic regression with a single feature: seawater_temperature, because it had the strongest correlation (-0.39) with the CUTI index. This model had a train accuracy of 68.9951%, and a test accuracy of 68.8415%, which beat the baseline accuracy significantly. Next, I created a logistic regression model using sea_surface_temperature, seawater_temperature, and practical_salinity, with PolynomialFeatures to create interaction terms and GridSearchCV to select for the best method of regularization (l1 or l2). This was my attemp at accounting for multicollinearity in this model. The best estimator returned by the grid search had a C value of 1 (might need to be tuned further) and a penalty of l1. This estimator had a train accuracy of 74.6179%, and a test accuracy of 75.3668%, another significant improvement in exchange for model complexity. 
+For the first iteration of modeling, I selected sea_surface_temperature, seawater_temperature, and practical_salinity from 01/01/17 - 09-14/17. The baseline model here, following the size of the majority class, is around 61.951%. There's strong multicollinearity in these features, so I made one logistic regression with a single feature: seawater_temperature, because it had the strongest correlation (-0.39) with the CUTI index. This model had a train accuracy of 68.9951%, and a test accuracy of 68.8415%, which beat the baseline accuracy significantly. 
+
+Next, I created a logistic regression model using sea_surface_temperature, seawater_temperature, and practical_salinity, with PolynomialFeatures to create interaction terms and GridSearchCV to select for the best method of regularization (l1 or l2). This was my attemp at accounting for multicollinearity in this model. The best estimator returned by the grid search had a C value of 1 (may require further tuning) and a penalty of l1. This estimator had a train accuracy of 74.6179%, and a test accuracy of 75.3668%, another significant improvement in exchange for model complexity. 
+
+Finally, I created a decision tree classifier using GridSearchCV, and found a best estimator with an alpha of 0 (may require further tuning), max_depth of 9, min_samples_leaf of 5, and min_samples_split of 20. The train accuracy of this model was 81.8893%, and the test accuracy was 79.4084%. Raising the possible max_depth value led to overfitting.
+
+TODO: 
+- compare other model metrics (recall, precision)
+- discuss misclassified data
+
+---
+
+### Future work
+
+There's a lot of avenues for future work with this project! Some of it may be caried over into my own future work, but here are a few quick suggestions and items from my list of stretch goals if you're interested in adding anything: 
+
+- Use unsupervised clustering methods on T-S plots and see what they think of the different water bodies. 
+- Add more variables than just those from the CTD and METBK instruments, or add more sites, or increase the number of observations passed to the models.
+- Interpolate the profiler data to a regular 2D grid and feed it into models, potentially using PCA or some other dimensionality reduction or feature extraction. 
+- Consider creating other classification models, like KNN, KMeans, or Naive Bayes. 
 
 ---
 
