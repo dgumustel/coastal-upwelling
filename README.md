@@ -74,7 +74,7 @@ Finally, I created a decision tree classifier using GridSearchCV, and found a be
 TODO: 
 - compare other model metrics (recall, precision)
 - discuss misclassified data
-- 
+
 ---
 
 ### Future work
