@@ -34,7 +34,10 @@ For the first round of logistic regression and decision tree classifiers, I used
 
 I gathered my data using the OOI API and the [OOI Data Access & Visualization page](https://ooinet.oceanobservatories.org/data_access/#CE)
 
-Data requests: 
+<br/>
+<br/>
+
+Data sources: 
 
 | Node                     | Instrument | Reference designator        | Method         | Stream                           |
 |--------------------------|------------|-----------------------------|----------------|----------------------------------|
@@ -42,16 +45,21 @@ Data requests:
 | Shallow Profiler (SF01B) | CTD        | CE04OSPS-PC01B-4A-CTDPFA109 | streamed       | ctdpf_sbe43_sample               |
 | 200m Platform (PC01B)    | CTD        | CE04OSPS-PC01B-4A-CTDPFA109 | streamed       | ctdpf_optode_sample              |
 
-Variables used in final modeling:
+<br/>
+<br/>
 
-| Variable                |Units| Description                                                                               |
-|-------------------------|---|------------------------------------------------------------------------------------------|
-| time                    | | Time of measurement collection, contains dates and times from the year 2017               |
-| practical salinity      | | Seawater practical salinity at a depth of 200 meters, collected by the 200 meter platform |
-| seawater temperature    | | Seawater temperature at a depth of 200 meters, collected by the 200 meter platform        |
-| sea surface temperature | | Seawater temperature at the sea surface, collected by the surface mooring METBK package   |
-| CUTI                    | | Upwelling index value, imported from the ERD, positive values indicate upwelling and negative values indicate downwelling (?)|
-| upwelling               | | One-hot encoded version of the CUTI data: 0 for CUTI <= 0 and 1 for CUTI > 0              |
+Variables used in final models:
+
+| Variable                |Units|Instrument|Description                                                                               |
+|-------------------------|---|---|------------------------------------------------------------------------------------------|
+| time                    | | | Time of measurement collection, contains dates and times from the year 2017               |
+| practical salinity      | | | Seawater practical salinity at a depth of 200 meters, collected by the 200 meter platform |
+| seawater temperature    | | | Seawater temperature at a depth of 200 meters, collected by the 200 meter platform        |
+| sea surface temperature | | | Seawater temperature at the sea surface, collected by the surface mooring METBK package   |
+| CUTI                    | | | Upwelling index value, imported from the ERD, positive values indicate upwelling and negative values indicate downwelling (?)|
+| upwelling               | | | One-hot encoded version of the CUTI data: 0 for CUTI <= 0 and 1 for CUTI > 0              |
+
+<br/>
 
 In the data from the surface mooring, sea surface temperature (SST) was stable between January to April around 10 to 11 degrees C. SST was up to 17 degrees in the summer months, but highly irregular - there are several sudden decreases in SST between June and October, potential signals of coastal upwelling. A visual of the pressure measurements from the shallow profiler showed that the profiler might have remained at one position for a siginificant number of months in 2017, from early January to the end of July. Similarly, the 200 meter platform saw a sudden change in seawater pressure and dissolved oxygen between July and August. These datasets may be annotated or flagged on the OOI data access portal. 
 
