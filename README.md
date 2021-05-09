@@ -28,7 +28,7 @@ For this project, I'm building a model to identify periods of coastal upwelling 
 
 ---
 
-### Data
+### Data and Analysis
 
 For the first round of logistic regression and decision tree classifiers, I used data from the Oregon Offshore surface mooring and 200 meter platform, from January 1st to September 15th, 2017. 
 
@@ -40,6 +40,10 @@ For the first round of logistic regression and decision tree classifiers, I used
 | sea surface temperature | Seawater temperature at the sea surface, collected by the surface mooring METBK package   |
 | CUTI                    | Upwelling index value, imported from the ERD, positive values indicate upwelling and negative values indicate downwelling (?) |
 | upwelling               | One-hot encoded version of the CUTI data: 0 for CUTI <= 0 and 1 for CUTI > 0              |
+
+In the data from the surface mooring, sea surface temperature (SST) was stable between January to April around 10 to 11 degrees C. SST was up to 17 degrees in the summer months, but highly irregular - there are several sudden decreases in SST between June and October, potential signals of coastal upwelling. A visual of the pressure measurements from the shallow profiler showed that the profiler might have remained at one position for a siginificant number of months in 2017, from early January to the end of July. Similarly, the 200 meter platform saw a sudden change in seawater pressure and dissolved oxygen between July and August. These datasets may be annotated or flagged on the OOI data access portal. 
+
+Some plots of the profiler measurements in August show the expected relationships between depth and environmental variables - shallow water is warmer, less saline, less dense, and more oxygenated than water at 200 meters. When SST and seawater temperature recorded by the 200 meter platform are plotted on shared axes, the visible trends are inverse to each other - SST increases while the temperature at 200 meters decreases between February and August. I wonder if this inverse relationship is also caused by upwelling! 
 
 ---
 
