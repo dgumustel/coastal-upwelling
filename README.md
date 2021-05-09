@@ -61,7 +61,7 @@ Outliers from the 2017 platform and METBK data were identified using z-scores, w
 
 ---
 
-### Modeling
+### Modeling and Results
 
 I chose to use logistic regression and decision tree classifiers from the [scikit-learn library](https://scikit-learn.org/stable/index.html). These models are simple to implement for binary classification and allow for interpretability, so we can investigate model coefficients and feature importance to identify the best environmental variables to use as features in upwelling classification. There's also potential for using unsupervised methods to look for clusters in the data as a stretch goal. 
 
@@ -74,6 +74,17 @@ Finally, I created a decision tree classifier using GridSearchCV, and found a be
 TODO: 
 - compare other model metrics (recall, precision)
 - discuss misclassified data
+- 
+---
+
+### Future work
+
+There's a lot of avenues for future work with this project! Some of it may be caried over into my own future work, but here are a few quick suggestions and items from my list of stretch goals if you're interested in adding anything: 
+
+- Use unsupervised clustering methods on T-S plots and see what they think of the different water bodies. 
+- Add more variables than just those from the CTD and METBK instruments, or add more sites, or increase the number of observations passed to the models.
+- Interpolate the profiler data to a regular 2D grid and feed it into models, potentially using PCA or some other dimensionality reduction or feature extraction. 
+- Consider creating other classification models, like KNN, KMeans, or Naive Bayes. 
 
 ---
 
