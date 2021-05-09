@@ -57,7 +57,15 @@ In the data from the surface mooring, sea surface temperature (SST) was stable b
 
 Some plots of the profiler measurements in August show the expected relationships between depth and environmental variables - shallow water is warmer, less saline, less dense, and more oxygenated than water at 200 meters. When SST and seawater temperature recorded by the 200 meter platform are plotted on shared axes, the visible trends are inverse to each other - SST increases while the temperature at 200 meters decreases between February and August. I wonder if this inverse relationship is also caused by upwelling! 
 
-Outliers from the 2017 platform and METBK data were identified using z-scores, which is the signed number of standard deviations each data point is above the mean. I used a threshold of 3 to identify outliers to drop, which made up only 0.6561% of the data. 
+Outliers from the 2017 platform and METBK data were identified using z-scores, which is the signed number of standard deviations each data point is above the mean ([source](https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba)). I used a threshold of 3 to identify outliers to drop, which made up only 0.6561% of the data. 
+
+---
+
+### Modeling
+
+I chose to use logistic regression and decision tree classifiers from the [scikit-learn library](https://scikit-learn.org/stable/index.html). These models are simple to implement for binary classification and allow for interpretability, so we can investigate model coefficients and feature importance to identify the best environmental variables to use as features in upwelling classification. There's also potential for using unsupervised methods to look for clusters in the data as a stretch goal. 
+
+For the first iteration of modeling, I selected sea_surface_temperature, seawater_temperature, and practical_salinity from 01/01/17 - 09-14/17. The baseline model here, following the size of the majority class, is around 61.951%. There's strong multicollinearity in these features, so I made one logistic regression with a single feature: seawater_temperature, because it had the strongest correlation (-0.39) with the CUTI index. This model had a train accuracy of 68.9951%, and a test accuracy of 68.8415%, which beat the baseline accuracy significantly. Next, I created a logistic regression model using sea_surface_temperature, seawater_temperature, and practical_salinity, with PolynomialFeatures to create interaction terms and GridSearchCV to select for the best method of regularization (l1 or l2). This was my attemp at accounting for multicollinearity in this model. The best estimator returned by the grid search had a C value of 1 (might need to be tuned further) and a penalty of l1. This estimator had a train accuracy of 74.6179%, and a test accuracy of 75.3668%, another significant improvement in exchange for model complexity. 
 
 ---
 
@@ -66,6 +74,10 @@ Outliers from the 2017 platform and METBK data were identified using z-scores, w
 The following links are included for myself and others.
 
 [Learn how to do data requests with the OOI API](https://datalab.marine.rutgers.edu/2020/05/data-requests-the-easy-way-with-the-ooi-api/#top)
+
+[OOILAB Python Toolbox](https://datalab.marine.rutgers.edu/2020/11/my-ooilab-python-toolbox/)
+
+[OOI Python Examples](https://datalab.marine.rutgers.edu/category/python-examples/)
 
 [Notesbooks for profiler downsampling](https://github.com/ooi-data-review/2018-data-workshops/tree/master/chemistry/examples/extras2/Profiler_Downsampling)
 
