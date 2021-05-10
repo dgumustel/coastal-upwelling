@@ -91,6 +91,7 @@ There's a lot of avenues for future work with this project! Some of it may be ca
 - Add more variables than just those from the CTD and METBK instruments, or add more sites, or increase the number of observations passed to the models.
 - Interpolate the profiler data to a regular 2D grid and feed it into models, potentially using PCA or some other dimensionality reduction or feature extraction. 
 - Consider creating other classification models, like KNN, KMeans, or Naive Bayes. 
+- Consider making this a multiclass classification problem instead of a binary classification by breaking the upwelling index up into strong upwelling, strong downwelling, and something in between. 
 
 ---
 
