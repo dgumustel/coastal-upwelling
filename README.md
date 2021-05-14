@@ -20,11 +20,11 @@ For this project, I'm building a model to identify periods of coastal upwelling 
 
 [04_preprocessing](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/04_preprocessing.ipynb) - This notebook reads in the 2017 METBK data, 2017 platform data, and CUTI upwelling index data and merges them into one dataframe along time. It then saves the resulting dataframe for modeling. 
 
-[05_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/05_modeling.ipynb) - This notebook contains logistic regression and decision tree models trained on the data saved at the end of notebook 04. This notebook also contains model evaluations and comparisons, and a brief investigation into the mislcassified data.
+[05_binary_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/05_binary_modeling.ipynb) - This notebook contains logistic regression and decision tree models trained on the data saved at the end of notebook 04. This notebook also contains model evaluations and comparisons, and a brief investigation into the mislcassified data.
 
-[T-S_plots](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/T-S_plots.ipynb) - This notebook contains temperature-salinity plots made using the 2018 profiler data. This notebook is the start of a stretch goal to use unsupervised clustering methods on T-S plots.
+[06_interpolation_griddata](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/06_interpolation_griddata.ipynb) - This notebook uses [scipy.interpolate.griddata](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html) to interpolate the 2018 profiler seawater temperature data into a regular 2D grid with dimensions time and depth, then saves it for modeling. 
 
-[misc_code](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/misc_code.ipynb) - This notebook contains miscellaneous snippets of code that I've written but don't currently need that I'd like to hold onto for potential use later. 
+[07_interpolated_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/notebooks/07_interpolated_modeling.ipynb) - This notebooks contains logistic regression and decision tree models trained on the interpolated 2018 profiler data created in notebook 06.
 
 ---
 
@@ -92,6 +92,19 @@ There's a lot of avenues for future work with this project! Some of it may be ca
 - Interpolate the profiler data to a regular 2D grid and feed it into models, potentially using PCA or some other dimensionality reduction or feature extraction. 
 - Consider creating other classification models, like KNN, KMeans, or Naive Bayes. 
 - Consider making this a multiclass classification problem instead of a binary classification by breaking the upwelling index up into strong upwelling, strong downwelling, and something in between. 
+
+---
+
+### Extras
+
+[T-S_plots](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/T-S_plots.ipynb) - This notebook contains temperature-salinity plots made using the 2018 profiler data. This notebook is the start of a stretch goal to use unsupervised clustering methods on T-S plots.
+
+[misc_code](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/misc_code.ipynb) - This notebook contains miscellaneous snippets of code that I've written but don't currently need that I'd like to hold onto for potential use later. 
+
+[multiclass_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/multiclass_modeling.ipynb) - This notebook is similar to 05_binary_modeling, but treats this project like a multiclass classification problem with three classes: strong upwelling, strong downwelling, and a middle, in-between class, each created arbitrarily using the middle 50% of data at the in-between class and the upper and lower quartiles for the strong upwelling and strong downwelling, respectively. These model results were significantly worse than the binary classification models.
+
+[threshold_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/threshold_modeling.ipynb) - Thise notebook is similar to 05_binary_modeling, but uses only the data belonging to the upper and lower quartiles of the upwelling index. These models performed better than those in the 05 notebook and could benefit from additional tuning. 
+
 
 ---
 
