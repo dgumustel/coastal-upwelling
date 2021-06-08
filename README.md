@@ -103,7 +103,7 @@ There's a lot of avenues for future work with this project! Some of it may be ca
 
 [multiclass_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/multiclass_modeling.ipynb) - This notebook is similar to 05_binary_modeling, but treats this project like a multiclass classification problem with three classes: strong upwelling, strong downwelling, and a middle, in-between class, each created arbitrarily using the middle 50% of data at the in-between class and the upper and lower quartiles for the strong upwelling and strong downwelling, respectively. These model results were significantly worse than the binary classification models.
 
-[threshold_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/threshold_modeling.ipynb) - Thise notebook is similar to 05_binary_modeling, but uses only the data belonging to the upper and lower quartiles of the upwelling index. These models performed better than those in the 05 notebook and could benefit from additional tuning. 
+[threshold_modeling](https://github.com/dgumustel/coastal-upwelling/blob/main/extras/threshold_modeling.ipynb) - This notebook is similar to 05_binary_modeling, but uses only the data belonging to the upper and lower quartiles of the upwelling index. These models performed better than those in the 05 notebook and could benefit from additional tuning. 
 
 
 ---
