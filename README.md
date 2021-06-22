@@ -48,14 +48,14 @@ Data sources:
 
 Variables used in final models:
 
-| Variable                |Units|Source|Description                                                                               |
-|-------------------------|---|---|------------------------------------------------------------------------------------------|
-| time                    | |Every instrument| Time of measurement collection, contains dates and times from the year 2017               |
-| practical salinity      | |200m Platform (PC01B)| Seawater practical salinity at a depth of 200 meters, collected by the 200 meter platform |
-| seawater temperature    | |200m Platform (PC01B)| Seawater temperature at a depth of 200 meters, collected by the 200 meter platform        |
-| sea surface temperature | |Shallow Profiler (SF01B)| Seawater temperature at the sea surface, collected by the surface mooring METBK package   |
-| CUTI                    | |[ERD](https://oceanview.pfeg.noaa.gov/products/upwelling/dnld)| Upwelling index value, imported from the ERD, positive values indicate upwelling and negative values indicate downwelling (?)|
-| upwelling               | |[ERD](https://oceanview.pfeg.noaa.gov/products/upwelling/dnld)| Target variable, a one-hot encoded version of the CUTI data: 0 for CUTI <= 0 and 1 for CUTI > 0              |
+| Variable                |Source|Description                                                                               |
+|-------------------------|---|------------------------------------------------------------------------------------------|
+| time                    |Every instrument| Time of measurement collection, contains dates and times from the year 2017               |
+| practical salinity      |200m Platform (PC01B)| Seawater practical salinity at a depth of 200 meters, collected by the 200 meter platform |
+| seawater temperature    |200m Platform (PC01B)| Seawater temperature at a depth of 200 meters, collected by the 200 meter platform        |
+| sea surface temperature |Shallow Profiler (SF01B)| Seawater temperature at the sea surface, collected by the surface mooring METBK package   |
+| CUTI                    |[ERD](https://oceanview.pfeg.noaa.gov/products/upwelling/dnld)| Upwelling index value, imported from the ERD, positive values indicate upwelling and negative values indicate downwelling (?)|
+| upwelling               |[ERD](https://oceanview.pfeg.noaa.gov/products/upwelling/dnld)| Target variable, a one-hot encoded version of the CUTI data: 0 for CUTI <= 0 and 1 for CUTI > 0              |
 
 <br/>
 
